@@ -1,4 +1,3 @@
-#from mahotas.features import zernike_moments
 import cPickle as pickle
 from cv2 import GaussianBlur
 from cv2 import HuMoments, moments, GaussianBlur
@@ -8,7 +7,6 @@ from sklearn.externals import joblib
 from sklearn.mixture import GMM
 from sobel_features import sobel_features
 from transitions import transition_features
-# from utils_extra.utils_extra import local_file
 from zernike_moments import zernike_features
 import os
 from utils import local_file
