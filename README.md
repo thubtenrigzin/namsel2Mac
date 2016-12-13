@@ -1,7 +1,7 @@
 # Namsel OCR
 An OCR application focused on machine-print Tibetan text
 
-DOCUMENTATION COMING SOON
+DOCUMENTATION COMING SOON. 
 
 Tested only on Ubuntu 14.04 and higher. 
 
