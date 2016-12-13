@@ -1,2 +1,2 @@
 # namsel
-An OCR for Tibetan
+An OCR application focused machine-print Tibetan text
