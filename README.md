@@ -12,7 +12,7 @@ Check out our library partner for already OCR'd digital text: http://tbrc.org.
 Get started:
 $ bash ubuntu_install.sh
 
-This will install required packages, build the cython modules, unpack datasets, and initiate training for the classifiers. Note that training takes (classify.py) takes up to an hour or more to complete.
+This will install required packages, build the cython modules, unpack datasets, and initiate training for the classifiers. Note that training (classify.py) takes up to an hour or more to complete.
 
 For command options:
 $ python namsel.py --help 
