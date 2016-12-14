@@ -187,7 +187,8 @@ OCR quality can vary widely depending on the runtime configuration being used. B
 	Rarely used. The number of iterations when dilating text in line cut. Increase this value when need to blob things together. Default is 4 iterations.
 
 ### Optional: generate data yourself from fonts
-This is strictly optional. The provided datasets already include these datapoints. (Section not finished).
+This is strictly optional. The provided datasets already include these datapoints. These commands are also run automatically if you run ubuntu_install.sh.
+
 Install fonts:
 
 ```bash
@@ -198,7 +199,7 @@ $ cp data_generation/fonts/*ttf ~/.fonts/
 $ fc-cache -f -v
 ```
 
-Generate a font-derived datasets:
+Generate the font-derived datasets:
 ```bash
 $ cd data_generation
 $ python font_draw.py
