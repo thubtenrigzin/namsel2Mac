@@ -19,8 +19,6 @@ This will install required packages, build the cython modules, unpack datasets, 
 
 To start, run preprocessing on folder of images:
 ```bash
-$ cd namsel-ocr
-$ git pull
 $ ./namsel.py preprocess ~/myfolder
 ```
 
