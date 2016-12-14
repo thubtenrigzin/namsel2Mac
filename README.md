@@ -70,7 +70,7 @@ $ gs -r600x600 -sDEVICE=tiffg4 -sOutputFile=ocr_%04d.tif -dBATCH -dNOPAUSE mytib
 ...while, again, replacing "tiffg4" with "tiffgray" for color and grayscale images and "mytibetanfile.pdf" with the path to your pdf file. Images will be unpacked at the location where the bash script or gs is run unless you specify otherwise.
 
 ###Preparing images using scantailor
-Scantailor is an open source project for cleaning up scanned documents and preparing them for OCR. Essentially, it performs 5 core operations:
+[Scantailor](https://github.com/scantailor/scantailor) is an open source project for cleaning up scanned documents and preparing them for OCR. Essentially, it performs 5 core operations:
 - Page splitting
 - Deskewing
 - Content isolation
