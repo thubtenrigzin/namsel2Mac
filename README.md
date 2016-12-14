@@ -206,4 +206,4 @@ $ python font_draw.py
 ```
 
 ### About the name
-Namsel is an English rendering of the Tibetan རྣམ་གསལ. Literally translated, རྣམ can be thought of as "thorough" or "in detail" and གསལ can be thought of as "clear", "illuminated". Put together, Namsel can be taken to mean "making clear the details" or "thoroughly illuminating," which are both appropriate descriptions of what the Namsel project is trying to do. Practically speaking, the name is also reasonably easy for non-native Tibetan speakers to read and pronounce correctly.
+Namsel is an English rendering of the Tibetan རྣམ་གསལ (transliterated: rnam gsal). Literally translated, རྣམ can be thought of as "thorough" or "in detail" and གསལ can be thought of as "clear", "illuminated". Put together, Namsel can be taken to mean "making clear the details" or "thoroughly illuminating," which are both appropriate descriptions of what the Namsel project is trying to do. Practically speaking, the name is also reasonably easy for non-native Tibetan speakers to read and pronounce correctly.
