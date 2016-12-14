@@ -177,7 +177,7 @@ OCR quality can vary widely depending on the runtime configuration being used. B
 	Use with the "line_cluster" line break method. Choices are "top" or "center." Clustering to the center of a line is good for cases where vowels may erroneously get clustered to the above line (on account of being closer to it distance-wise).
 
   **--postprocess**
-	Run a post-processing step. This is usually an attempt to insert missing tsek characters into the final results of an OCR run. It highly experimental and can severely mangle otherwise accurate OCR.
+	Run a post-processing step. This is usually an attempt to insert missing tsek characters into the final results of an OCR run. This is highly experimental and can severely mangle otherwise accurate OCR.
 
  **--detect_o**
 	Detect na-ro vowels prior to segmentation and remove them temporarily. This is useful in cases where the na-ro vowels are long and adversely inflating char-width measurements (measurements that are used to determine how and when to segment horizontally touching stacks).
