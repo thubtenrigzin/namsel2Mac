@@ -51,23 +51,15 @@ If you are scanning the documents to be OCR'd yourself, here are some tips for i
 ###Preparing images from PDFs
 If your original document is in PDF format, you will need to convert the individual PDF pages to black and white or grayscale jpg, tif, or png images. Black and white tif images are Namsel's preferred format.
 
-There are a variety of tools for converting a PDF to images. Namsel has a bash script that wraps around the Ghostscript gs utility called "unpack_tiff.sh." To use it, you must have gs installed.
+There are a variety of tools for converting a PDF to images. The "gs" command from the Ghostscript project is one.
 
-Example usage:
-
-```bash
-$ ./unpack_tiff.sh tiffg4 mytibetanfile.pdf
-```
-
-This will convert all the pages in the pdf to tiff using the "Group 4" compression, which is the most compact form of TIFF compression for black and white images. If your pdf is in grayscale, replace "tiffg4" with "tiffgray."
-
-Alternatively, you can invoke gs itself like so:
+You can invoke gs itself like so:
 
 ```bash
 $ gs -r600x600 -sDEVICE=tiffg4 -sOutputFile=ocr_%04d.tif -dBATCH -dNOPAUSE mytibetanfile.pdf
 ```
 
-...while, again, replacing "tiffg4" with "tiffgray" for color and grayscale images and "mytibetanfile.pdf" with the path to your pdf file. Images will be unpacked at the location where the bash script or gs is run unless you specify otherwise.
+This will convert all the pages in the pdf to tiff using the "Group 4" compression, which is the most compact form of TIFF compression for black and white images. If your pdf is in grayscale, replace "tiffg4" with "tiffgray." Images will be unpacked at the location where the bash script or gs is run unless you specify otherwise.
 
 ###Preparing images using scantailor
 [Scantailor](https://github.com/scantailor/scantailor) is an open source project for cleaning up scanned documents and preparing them for OCR. Essentially, it performs 5 core operations:
