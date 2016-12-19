@@ -9,7 +9,6 @@ import numpy as np
 from random import gauss
 from page_elements2 import PageElements
 from sklearn.externals import joblib
-from sklearn.externals.joblib import Memory
 from tempfile import mkdtemp
 from transitions import horizontal_transitions
 from utils import add_padding, local_file, check_for_overlap
