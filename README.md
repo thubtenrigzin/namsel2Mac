@@ -109,10 +109,12 @@ In addition to the above parameters, you can also set parameters for the Scantai
 
 
   **--layout**
+  
 	The layout of pages that Scantailor can expect. Choices are "single" and "double," referring to scanned images that have up to one or two pages on them.
 
 
   **--threshold**
+  
 	The amount of thinning or thickening Scantailor will do. Good values are between -40 and 40. Negative values thin the image, positive values thicken it.
 
 
@@ -135,47 +137,56 @@ For an entire volume:
 ./namsel recognize-volume folder-of-tiff-images
 ```
 
-Other options are "preprocess," "isolate-lines," and "view-page-info." Preprocessing is discussed below. "Isolate-lines" runs the Namsel pipeline, but only until the line separation stage and outputs the segmented lines as tif images in a directory called "separated-lines" that is created within the parent directory. (TO BE IMPLEMENTED)
-
-"View-page-info" prints out information about a page being OCR'd, including the number of lines it contains and the width measurements of its characters.
+Other options are "preprocess" and "isolate-lines." Preprocessing is discussed below. "Isolate-lines" runs the Namsel pipeline, but only until the line separation stage and outputs the segmented lines as tif images in a directory called "separated-lines" that is created within the parent directory. (TO BE IMPLEMENTED)
 
 OCR quality can vary widely depending on the runtime configuration being used. Below is a list of tunable configuration parameters that Namsel uses. 
 
 
   **--page_type**
+  
 	Choices "book" or "pecha." If not specified, Namsel will attempt to determine the page type based on the length and height of the page.
 
 
   **--recognizer**
+  
 	This is the type of recognizer that is used. The options are "hmm" and "probout." Use "hmm" most of the time. If the text you are OCR'ing contains many unusual character combinations and/or many sections requiring complex segmentation, the "probout" recognizer may yield better results.
 
 
   **--line_break_method**
+  
 	Options are "line_cut" and "line_cluster." Namsel will attempt to choose for you if this is left unspecified. Generally, "line_cut" works well for book-style pages and "line_cluster" works well for pecha and book-style pages.
 
   **--break_width** 
-	The value that controls how horizontally-connected stacks will be segmented. A high value (e.g. 4.0) will perform almost no segmentation. A low value (e.g. .5) may severely over-segment characters. Typical good values are 2, 2.5, 3, or 3.5. (Note that some text evade accurate segmentation, in which case there's no "goldlilocks" break-width that will manage to accurately segment wide connected stacks while also avoiding segmentation).
+  
+	The value that controls how horizontally-connected stacks will be segmented. A high value (e.g. 4.0) will perform almost no segmentation. A low value (e.g. .5) may severely over-segment characters. Typical good values are 2, 2.5, 3, or 3.5. (Note that some text evade accurate segmentation, in which case there's no "goldlilocks" break-width that will manage to accurately segment wide connected stacks while also avoiding over-segmentation).
 
   **--segmenter**
+  
 	The type of segmentation strategy to use. "stochastic" is default and is almost always the best option.
 
 
  **--low_ink**
+ 
 	Default: False. Attempt to compensate for poorly inked texts, particularly cases where the glyphs aren't connected together as part of a single stroke. 
 
   **--line_cluster_pos**
+  
 	Use with the "line_cluster" line break method. Choices are "top" or "center." Clustering to the center of a line is good for cases where vowels may erroneously get clustered to the above line (on account of being closer to it distance-wise).
 
   **--postprocess**
+  
 	Run a post-processing step. This is usually an attempt to insert missing tsek characters into the final results of an OCR run. This is highly experimental and can severely mangle otherwise accurate OCR.
 
  **--detect_o**
+ 
 	Detect na-ro vowels prior to segmentation and remove them temporarily. This is useful in cases where the na-ro vowels are long and adversely inflating char-width measurements (measurements that are used to determine how and when to segment horizontally touching stacks).
 
   **--clear_hr**
+  
 	Identify and remove horizontal rule or line on the top of a page. Set to True when you want to get ride of title or chapter  lines that appear on each page. Note: use with caution if page_type is "pecha"
 
  **--line_cut_inflation**
+ 
 	Rarely used. The number of iterations when dilating text in line cut. Increase this value when need to blob things together. Default is 4 iterations.
 
 ### Optional: generate data yourself from fonts
