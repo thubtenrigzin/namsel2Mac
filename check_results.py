@@ -12,11 +12,9 @@
     
 
 from root_based_finder import is_non_std, word_parts
-#from yikdev.yik_dev import word_parts
 from termset import syllables as termset
 import re
 import codecs
-#import numpy
 word_parts = u''.join(list(word_parts))
 
 reg = re.compile(ur'[^%s]*' % word_parts)
@@ -224,12 +222,8 @@ class TextScores():
         else:
             syllables = reg.split(res_str)
             
-#        results.update(self._dict_score(syllables, multiline=multiline)) 
         results.update(self._target_score(syllables, multiline=multiline)) 
-#        results.update(self._non_std_score(syllables, multiline=multiline))
-#        results.update(self._punc_syllable_ratio(res_str, multiline=multiline))
         self.__dict__.update(results)
-#        return results
     
 if __name__ == '__main__':
     sample = u'''གང་དྲན་ཆོས་སྐུར་ཤེས། །སྨིག་རྒྱུ་ནམ་མཁར་ཤེས་པ་འདྲ། །བརྟུལ་ཞགས་མཆོག་གི་སྤྱོད་པ་ནི། །མཚམས་མེད་ལྔ་དང་མི་དགེ་བཅུ། །ཆགས་སྡང་ལྔ་ལ་ལོངས་སྤྱད་ཀྱང་། །ལྟ་བ་རྟོགས་པའི་གྲངས་སུ་འགྱུར། །
