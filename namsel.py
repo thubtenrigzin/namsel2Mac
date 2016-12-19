@@ -34,7 +34,7 @@ class PageRecognizer(object):
         self.page_array = np.asarray(Image.open(imagefile).convert('L'))/255
         if self.page_array.all():
             self.conf['line_break_method'] = 'line_cut'
-#             raise FailedPageException('Attempted to OCR a blank page')
+
         # Determine whether a page is of type book or pecha        
         # Define line break method and page type if needed
         self.line_break_method = self.conf['line_break_method']
@@ -95,9 +95,6 @@ class PageRecognizer(object):
             self.line_info = LineCluster(self.shapes, k=self.k_groups)
 
         self.line_info.rbfcls = rbfcls
-#         except:
-#             print 'An exception occured'
-#             import traceback;traceback.print_exc()
             
     def generate_segmentation(self):  
         self.segmentation = Segmenter(self.line_info)
@@ -126,7 +123,7 @@ class PageRecognizer(object):
 #                     print 'running viterbi post processing as next iter'
                     results = self.viterbi_post_process(self.page_array, results)
             else: # Should only be call from *within* a non viterbi run...
-               # print 'Debug: Running withi/in viterbi post proc'
+               # print 'Debug: Running within viterbi post proc'
                 prob, results = hmm_recognize_bigram(self.segmentation)
     
                 return prob, results
@@ -167,7 +164,6 @@ class PageRecognizer(object):
                         logging.info('Exited after failure of second run.')
                         return []
             if not conf['viterbi_postprocessing']: 
-    #             pickle.dump(results, open(page_info.get('flname','')+'.pkl', 'wb'))
                 if not results:
                     logging.info('***** No OCR output for %s *****' % self.page_info['flname'])
                 if text:
@@ -270,31 +266,6 @@ def run_recognize_remote(imagepath, conf_dict, text=False):
     rec = PageRecognizer(imagepath, conf=Config(**conf_dict))
     results = rec.recognize_page(text=text)
     return results
-
-# def run_preproc_and_ocr(rid, imagepath, preproc_conf, ocr_conf):
-#     dirpath = os.path.dirname(imagepath)
-#     outdir = os.path.join(dirpath, 'out')
-#     g4dir = os.path.join(outdir, 'g4')
-#     if not os.path.exists(outdir):
-#         os.mkdir(outdir)
-#     if not os.path.exists(g4dir):
-#         os.mkdir(g4dir)
-#     img_basename = os.path.basename(imagepath)
-#     if not img_basename.endswith('tif'):
-#         img_basename = img_basename.split('.')[0] + '.tif'
-#     st_img = os.path.join(outdir, img_basename)
-#     g4_img = os.path.join(g4dir, img_basename)
-#     run_scantailor(imagepath, preproc_conf['st_threshold'], 
-#                    layout=preproc_conf['layout'])
-#     
-#     call_status = check_call('tiffcp -c g4 {} {}'.format(st_img, g4_img), 
-#                              shell = True)
-#     
-#     rec = PageRecognizer(g4_img, conf=Config(**ocr_conf))
-#     results = rec.recognize_page(text=True)
-#     codecs.open('/tmp/'+img_basename + '.txt', 'w', 'utf-8').write(results)    
-#     #TODO: do OCR, construct text from page_info, and save various pieces somewhere...
-
 
 if __name__ == '__main__':
     DEFAULT_OUTFILE = 'ocr_output.txt'
