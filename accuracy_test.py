@@ -1,12 +1,9 @@
 #encoding: utf-8
 
 import cPickle as pickle
-import cProfile
-from classify import load_cls
-from classify import label_chars
-from classify import write_libsvm_file
+from classify import load_cls, label_chars
 from cv2 import GaussianBlur
-from feature_extraction import get_zernike_moments, get_hu_moments, \
+from feature_extraction import get_zernike_moments, get_hu_moments, 
     extract_features, normalize_and_extract_features
 from functools import partial
 import glob
@@ -28,7 +25,7 @@ tsets = pickle.load(open('datasets/testing/training_sets.pkl', 'rb'))
 scaler = joblib.load('zernike_scaler-latest')
 
 print 'importing classifier'
-#from classify import fast_cls as cls
+
 print cls.get_params()
 
 print 'scoring ...'
