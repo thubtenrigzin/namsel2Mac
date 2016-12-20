@@ -1,4 +1,4 @@
-'''A set of utils_extra for defining and working with namsel-ocr config files
+'''A set of utilities for defining and working with namsel-ocr config files
 '''
 
 import json
