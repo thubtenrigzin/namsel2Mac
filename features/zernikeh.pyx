@@ -1,7 +1,15 @@
+'''Implemented from Hosny, K. M. 2007. “Fast computation of accurate Zernike moments.” Journal of Real-Time Image
+Processing 3.1-2: 97–107.
+
+Author: Zach Rowinski, 2016
+'''
+
 from __future__ import division
 import numpy as np
 cimport numpy as np
 cimport cython
+ 
+ 
  
 @cython.boundscheck(False)
 @cython.nonecheck(False)
