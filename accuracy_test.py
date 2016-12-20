@@ -3,7 +3,7 @@
 import cPickle as pickle
 from classify import load_cls, label_chars
 from cv2 import GaussianBlur
-from feature_extraction import get_zernike_moments, get_hu_moments, 
+from feature_extraction import get_zernike_moments, get_hu_moments, \
     extract_features, normalize_and_extract_features
 from functools import partial
 import glob
