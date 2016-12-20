@@ -5,8 +5,6 @@ cimport cython
 np.import_array()
 
 ctypedef np.float32_t dtype_t
-# 
-# cdef dtype_t _NINF = -np.inf
 cdef np.float32_t _NINF = np.float32(-np.inf)
 
 
