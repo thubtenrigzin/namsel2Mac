@@ -1,11 +1,9 @@
 
 from __future__ import division
-# import numpy as np
 from cv2 import Sobel
 cimport numpy as np
 cimport cython
 from libc.math cimport sqrt, atan2, fmod, M_PI
-# from cython.parallel import prange, parallel
 ctypedef np.int_t DTYPE_t
 
 @cython.boundscheck(False)
