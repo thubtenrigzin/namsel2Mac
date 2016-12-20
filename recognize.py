@@ -48,7 +48,6 @@ predict_proba = cls.predict_proba
 # Trained characters are labeled by number. Open the shelve that contains
 # the mappings between the Unicode character and its number label.
 allchars = shelve.open(local_file('allchars_dict2'))
-#allchars = shelve.open('/home/zr/letters/allchars_dict_extended')
 char_to_dig = allchars['allchars']
 dig_to_char = allchars['label_chars']
 allchars.close()
@@ -67,9 +66,9 @@ cdmap = pickle.load(open(local_file('extended_char_dig.pkl')))
 
 # HMM data structures
 trans_p = np.load(open(local_file('stack_bigram_logprob32.npz')))
-trans_p = trans_p[trans_p.files[0]].transpose()#.astype(np.float32)
+trans_p = trans_p[trans_p.files[0]].transpose()
 start_p = np.load(open(local_file('stack_start_logprob32.npz')))
-start_p = start_p[start_p.files[0]]#.astype(np.float32)
+start_p = start_p[start_p.files[0]]
 
 start_p_nonlog = np.exp(start_p)
 
@@ -377,8 +376,7 @@ def hmm_recognize_bigram(segmentation):
             syllable.append(em)
     if syllable:
         hmm_out = viterbi_hidden_tsek(states, start_p_nonlog, trs_prob, syllable)
-
-#         hmm_out = viterbi_hidden_tsek(states, start_p_nonlog, trans_p, syllable)
+        
         results.append(hmm_out)
     else:
         prob = 0
