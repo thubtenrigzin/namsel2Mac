@@ -2,11 +2,11 @@
 # Do all of this and then save a snapshot
 sudo apt-get update
 sudo apt-get install python-pip
-sudo apt-get install ghostscript
 sudo apt-get install build-essential python-dev python-setuptools \
                      python-numpy python-scipy \
                      libatlas-dev libatlas3gf-base
 sudo apt-get install python-opencv libtiff-tools python-gtk2 python-cairo unzip
+sudo apt-get install ghostscript
 sudo apt-get install scantailor
 sudo pip install Cython
 sudo pip install pillow sklearn requests simplejson
