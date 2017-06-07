@@ -87,3 +87,13 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Vagrant
+.vagrant
+Vagrantfile
+
+# Build Related
+/datasets
+allchars_dict2
+fast_utils.c
+viterbi_cython.c
