@@ -877,7 +877,7 @@ class PageElements(object):
         for i, b in enumerate(border_boxes):
             bx,by,bw,bh = b
             self.img_arr[by:by+1,bx+3:bx+bw-3] = 1
-            self.img_arr[by+bh,by+bh-1:bx+3:bx+bw-3] = 1
+            #self.img_arr[by+bh,by+bh-1:bx+3:bx+bw-3] = 1
             for nb in border_boxes[i+1:]:
                 if b_contains_nb(b, nb):
                     tree[bid(b)]['boxes'].append(bid(nb))
