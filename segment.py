@@ -463,7 +463,7 @@ class Segmenter(object):
                     wdthprobs += gausslogprob(cur_mean, cur_std, end-prev)
                     
                     s = fadd_padding(letter[:,int(prev):int(end)], padding_amount)
-                    ctrs, hier = cv.findContours(s.copy(), mode=cv.RETR_TREE , method=cv.CHAIN_APPROX_NONE)
+                    _, ctrs, hier = cv.findContours(s.copy(), mode=cv.RETR_TREE , method=cv.CHAIN_APPROX_NONE)
                     bounding = map(boundingRect, ctrs)
                     for k, b in enumerate(bounding):
                         if (b[2] < 23 or b[3] < 23) and hier[0][k][3] == 0:
