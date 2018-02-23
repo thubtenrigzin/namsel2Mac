@@ -1,7 +1,7 @@
 # Namsel OCR
 An OCR application focused on machine-print Tibetan text
 
-Tested only on Ubuntu 14.04 and higher. 
+Tested only on a fresh install of Mac Os 10.13 High Sierra. 
 
 An overview of the Namsel project can be found in [our article in the journal Himalayan Linguistics](https://escholarship.org/uc/item/6d5781k5).
 
@@ -9,11 +9,16 @@ Check out our library partner for already OCR'd digital text: http://tbrc.org.
 
 ## Install:
 ```bash
-$ bash ubuntu_install.sh
+$ bash mac_install.sh
 ```
 
 This will install required packages, build the cython modules, unpack datasets, and initiate training for the classifiers. Note that training (classify.py) takes up to an hour or more to complete.
 
+scantailor-cli is installed by default in "/opt/local/bin"
+Remember to add /opt/local/bin in your $PATH in order to call scantailor-cli for the preprocessing tasks.
+```bash
+$ export PATH="/opt/local/bin/:$PATH"
+```
 
 ## Quickstart
 
@@ -189,7 +194,7 @@ Identify and remove horizontal rule or line on the top of a page. Set to True wh
 Rarely used. The number of iterations when dilating text in line cut. Increase this value when need to blob things together. Default is 4 iterations.
 
 ### Optional: generate data yourself from fonts
-This is strictly optional. The provided datasets already include these datapoints. These commands are also run automatically if you run ubuntu_install.sh.
+This is strictly optional. The provided datasets already include these datapoints. These commands are also run automatically if you run mac_install.sh.
 
 Install fonts:
 
