@@ -14,8 +14,7 @@ $ bash mac_install.sh
 
 This will install required packages, build the cython modules, unpack datasets, and initiate training for the classifiers. Note that training (classify.py) takes up to an hour or more to complete.
 
-scantailor-cli is installed by default in "/opt/local/bin"
-Remember to add /opt/local/bin in your $PATH in order to call scantailor-cli for the preprocessing tasks.
+scantailor-cli is installed by default in "/opt/local/bin". Remember to add it to your $PATH in order to call Scantailor for the preprocessing tasks.
 ```bash
 $ export PATH="/opt/local/bin/:$PATH"
 ```
