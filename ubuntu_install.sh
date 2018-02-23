@@ -5,6 +5,7 @@ sudo apt-get install python-pip python2.7-dev \
                      libatlas-dev libatlas3-base ghostscript scantailor \
                      python-opencv libtiff-tools python-gtk2 python-cairo unzip
 sudo pip2 install Cython pillow sklearn requests simplejson wheel scipy numpy
+sudo pip2 install --upgrade scikit-learn==0.18.1
 python setup.py build_ext --inplace
 mkdir -p ~/.fontscp data_generation/fonts/*ttf ~/.fonts/
 fc-cache -f -v
