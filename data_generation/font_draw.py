@@ -7,7 +7,7 @@ import numpy as np
 from scipy.misc import imresize
 import sys
 from scipy.ndimage.filters import gaussian_filter
-import cv
+import cv2
 from scipy.ndimage.morphology import binary_erosion
 import multiprocessing
 from random import randint
