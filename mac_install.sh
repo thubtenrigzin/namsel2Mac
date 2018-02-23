@@ -41,4 +41,4 @@ unzip datapickles.zip
 cd ..
 python2 classify.py
 
-echo -e '\nAll Done!\n\nRemember to add /opt/local/bin in your $PATH for Scantailor-cli to be called by Namsel before running the program (export PATH="/opt/local/bin/:$PATH")'
+echo -e '\nAll Done!\n\nRemember to add /opt/local/bin in your $PATH for Scantailor-cli to be called by Namsel before running the program (export PATH="/opt/local/bin/:$PATH")\n'
