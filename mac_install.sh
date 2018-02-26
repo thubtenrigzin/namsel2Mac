@@ -31,12 +31,12 @@ sudo port install scantailor
 
 #Here we are! Namsel OCR
 python2 setup.py build_ext --inplace
-mkdir -p ~/.fontscp ~/.fonts
-fc-cache -f -v
 cd data_generation
+mkdir -p ~/.fonts/
+cp ./fonts/*ttf ~/.fonts
+fc-cache -f -v
 python2 font_draw.py
-cd ..
-cd datasets
+cd ../datasets
 unzip datapickles.zip
 cd ..
 python2 classify.py
