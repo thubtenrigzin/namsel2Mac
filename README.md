@@ -1,3 +1,7 @@
+This repository is now archived and closed, as all the commits were merged in [Namsel_OCR](https://github.com/thubtenrigzin/Namsel_OCR)
+
+---
+
 # Namsel OCR
 An OCR application focused on machine-print Tibetan text
 
